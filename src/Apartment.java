@@ -1,4 +1,4 @@
-public class Apartment extends Home
+public class Apartment extends Home implements TEst
 {
 
   private double rent;
@@ -25,5 +25,10 @@ public class Apartment extends Home
 
   public String toString(){
     return "Rent: " + rent + " Address: " + getAddress();
+  }
+
+  @Override public void setstring()
+  {
+
   }
 }
