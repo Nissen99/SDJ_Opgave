@@ -12,7 +12,4 @@ public class Lego extends Toy
     return "Build";
   }
 
-
-
-
 }
