@@ -9,6 +9,9 @@ public class TestInt2
 
     ArrayList<Integer> list = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
+    int counter = 0;
+    int sum = 0;
+
 
     do
     {
@@ -16,6 +19,8 @@ try
 {
   System.out.println("Please input an integer");
   list.add(scanner.nextInt());
+  counter++;
+  sum += list.get(list.size()-1);
 } catch (InputMismatchException e){
   if (scanner.nextLine().equals("end")){
     break;
@@ -23,9 +28,6 @@ try
 }
     } while (true);
 
-    for (int i = 0; i < list.size(); i++){
-      System.out.println(list.get(i));
-    }
-
+    System.out.println("You input " + counter + " int and they sum " + sum);
   }
 }
