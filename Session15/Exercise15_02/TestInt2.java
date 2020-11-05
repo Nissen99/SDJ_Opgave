@@ -25,6 +25,9 @@ try
   if (scanner.nextLine().equals("end")){
     break;
   }
+  else{
+    System.out.println("Try again");
+  }
 }
     } while (true);
 
