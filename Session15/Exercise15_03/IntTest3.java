@@ -11,9 +11,8 @@ public class IntTest3
     System.out.println("How big do you want your list");
     int[] listOfInts = new int[scanner.nextInt()];
 
-
-
-    for (int i = 0; i < listOfInts.length;){
+    for (int i = 0; i < listOfInts.length; )
+    {
 
       try
       {
@@ -21,9 +20,11 @@ public class IntTest3
         listOfInts[i] = scanner.nextInt();
         i++;
 
-      } catch (InputMismatchException e){
-       scanner.next();
-       System.out.println("Try again");
+      }
+      catch (InputMismatchException e)
+      {
+        scanner.next();
+        System.out.println("Try again");
 
       }
     }
@@ -33,19 +34,75 @@ public class IntTest3
       System.out.println(listOfInts[i]);
     }
 
-    System.out.println("Chose 2 ints from the list");
 
-    int firstNumber = scanner.nextInt();
+    int firstNumber = 0;
 
-    int secondNumber = scanner.nextInt();
+    int secondNumber = 0;
 
 
-    for (int i = 0; i < listOfInts.length; i++){
+    while (firstNumber==0 || secondNumber==0){
+      System.out.println("Chose 1 ints from the list");
+      int other = scanner.nextInt();
 
-      if (firstNumber == listOfInts[i]){
-        continue;
+      for (int i = 0; i < listOfInts.length;i++){
+
+        if (other == listOfInts[i]){
+          if (firstNumber == 0){
+            firstNumber = other;
+          }
+
+          else {
+            secondNumber = other;
+          }
+        }
+
+
       }
-      else if (i == listOfInts.length -1){
+
+    }
+
+
+
+scanner.nextLine();
+    boolean repeat = true;
+    while (repeat)
+    {
+      System.out.println("What math you want me g?");
+      String math = scanner.nextLine();
+
+      switch (math)
+      {
+        case "add":
+          System.out.println(firstNumber + secondNumber);
+          repeat = false;
+          break;
+
+        case "minus":
+          System.out.println(firstNumber-secondNumber);
+          repeat = false;
+          break;
+
+        case "times":
+          System.out.println(firstNumber*secondNumber);
+          repeat = false;
+          break;
+
+        case "divide":
+          System.out.println("This does not work well with ints cuz they are ints");
+          System.out.println(firstNumber/secondNumber);
+          double firstDouble = firstNumber;
+          double secondDouble = secondNumber;
+          System.out.println("This works better with doubles");
+          System.out.println(firstDouble/secondDouble);
+          repeat = false;
+          break;
+
+        default:
+          System.out.println("Try again");
+          math = scanner.nextLine();
+          repeat = true;
+          break;
+
 
       }
     }
