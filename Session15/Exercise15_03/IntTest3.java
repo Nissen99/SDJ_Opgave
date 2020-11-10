@@ -5,11 +5,21 @@ public class IntTest3
 {
   public static void main(String[] args)
   {
-
+    int[] listOfInts;
     Scanner scanner = new Scanner(System.in);
 
-    System.out.println("How big do you want your list");
-    int[] listOfInts = new int[scanner.nextInt()];
+   while (true)
+   {
+     try {
+     System.out.println("How big do you want your list");
+     listOfInts = new int[scanner.nextInt()];
+     break;
+   }catch (InputMismatchException e){
+       System.out.println("A NUMBER, how hard can it be");
+       scanner.nextLine();
+     }
+
+   }
 
     for (int i = 0; i < listOfInts.length; )
     {
@@ -41,8 +51,16 @@ public class IntTest3
 
 
     while (firstNumber==0 || secondNumber==0){
-      System.out.println("Chose 1 ints from the list");
-      int other = scanner.nextInt();
+      int other = 0;
+      try
+      {
+        System.out.println("Chose 1 ints from the list");
+        other = scanner.nextInt();
+      }catch (InputMismatchException e){
+        System.out.println("try again");
+        scanner.nextLine();
+      }
+
 
       for (int i = 0; i < listOfInts.length;i++){
 
@@ -67,6 +85,7 @@ scanner.nextLine();
     boolean repeat = true;
     while (repeat)
     {
+
       System.out.println("What math you want me g?");
       String math = scanner.nextLine();
 
@@ -99,7 +118,6 @@ scanner.nextLine();
 
         default:
           System.out.println("Try again");
-          math = scanner.nextLine();
           repeat = true;
           break;
 
