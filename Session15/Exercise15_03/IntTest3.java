@@ -83,8 +83,9 @@ public class IntTest3
 
 scanner.nextLine();
     boolean repeat = true;
-    while (repeat)
+  do
     {
+      repeat = false;
 
       System.out.println("What math you want me g?");
       String math = scanner.nextLine();
@@ -93,17 +94,14 @@ scanner.nextLine();
       {
         case "add":
           System.out.println(firstNumber + secondNumber);
-          repeat = false;
           break;
 
         case "minus":
           System.out.println(firstNumber-secondNumber);
-          repeat = false;
           break;
 
         case "times":
           System.out.println(firstNumber*secondNumber);
-          repeat = false;
           break;
 
         case "divide":
@@ -113,7 +111,6 @@ scanner.nextLine();
           double secondDouble = secondNumber;
           System.out.println("This works better with doubles");
           System.out.println(firstDouble/secondDouble);
-          repeat = false;
           break;
 
         default:
@@ -123,7 +120,7 @@ scanner.nextLine();
 
 
       }
-    }
+    } while (repeat);
 
 
 
