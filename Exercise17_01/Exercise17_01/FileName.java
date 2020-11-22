@@ -11,15 +11,16 @@ public class FileName
     String name = scanner.nextLine();
     File file = new File(name + ".bin");
     FileOutputStream fis = new FileOutputStream(file);
-
+    ObjectOutputStream out = null;
     try
     {
-      ObjectOutputStream out = new ObjectOutputStream(fis);
+      out = new ObjectOutputStream(fis);
     }
     catch (IOException e)
     {
       e.printStackTrace();
     }
+
 
     while(true){
 
@@ -31,15 +32,14 @@ public class FileName
 
         if (!other.equals("QUIT"))
         {
-
-
+          out.writeObject(other);
         }
         else{
           break;
         }
 
 
-      }catch (InputMismatchException e){
+      }catch (InputMismatchException | IOException e){
         System.out.println("WRONG");
 
       }

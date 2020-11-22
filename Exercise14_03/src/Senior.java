@@ -1,4 +1,6 @@
-public class Senior extends ClubMember
+import java.io.Serializable;
+
+public class Senior extends ClubMember implements Serializable
 {
 
   public Senior(String name, int age)

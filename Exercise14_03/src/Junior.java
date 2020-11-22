@@ -1,4 +1,6 @@
-public class Junior extends ClubMember
+import java.io.Serializable;
+
+public class Junior extends ClubMember implements Serializable
 {
   private char gender;
 

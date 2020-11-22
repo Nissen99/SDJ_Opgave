@@ -1,4 +1,6 @@
-public abstract class ClubMember
+import java.io.Serializable;
+
+public abstract class ClubMember implements Serializable
 {
   private String name;
   private int age;
